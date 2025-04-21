@@ -1,2 +1,2 @@
 # ubPrep
-Setup prep  script for Ubuntu Server
+Setup prep script for Valkyrie Gadget
