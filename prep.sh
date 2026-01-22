@@ -22,7 +22,7 @@ fi
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
 echo "get the other stuff"
-sudo nala install gcc make bzip2 btop g++ python3-pip python3-opencv python3-websockets python3-paho-mqtt cmake nodejs webmin mosquitto -y
+sudo nala install gcc make bzip2 btop g++ python3-pip python3-opencv python3-websockets python3-paho-mqtt cmake nodejs webmin mosquitto trash-cli -y
 
 #setup some dirs
 #echo "setup patrol and cyclops dirs"
