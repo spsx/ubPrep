@@ -39,13 +39,13 @@ pm2 status
 #add to shell hub
 HOST=$(hostname)
 echo installing shellhub for $HOST
-snap install --classic shellhub
+sudo snap install --classic shellhub
 echo "setting parameters for shellhub"
-snap set shellhub tenant-id=742bbfa1-05ac-4881-8245-1f4977c65fc6
-snap set shellhub server-address=https://hub.roguefoc.us
-snap set shellhub preferred-hostname=$HOST
+sudo snap set shellhub tenant-id=742bbfa1-05ac-4881-8245-1f4977c65fc6
+sudo snap set shellhub server-address=https://hub.roguefoc.us
+sudo snap set shellhub preferred-hostname=$HOST
 echo "restarting shellhub"
-snap restart shellhub
+sudo snap restart shellhub
 
 #linutil
 curl -fsSL https://christitus.com/linux | sh
