@@ -24,24 +24,6 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 echo "get the other stuff"
 sudo nala install gcc make bzip2 btop g++ python3-pip python3-opencv python3-websockets python3-paho-mqtt cmake nodejs webmin mosquitto -y
 
-echo "looking for mybash"
-# if [ ! -d "/home/synergy/build" ]; then
-#     echo "making build"
-#     mkdir -p ~/build
-#     cd ~/build
-#     git clone https://github.com/christitustech/mybash
-#     cd mybash
-#     ./setup.sh
-# fi
-if [ ! -d "/home/synergy/mybash" ]; then
-    echo "making dir"
-    mkdir -p ~/mybash
-    cd ~/mybash
-    git clone --depth=1 https://github.com/dacrab/mybash.git
-    cd mybash
-    ./setup.sh
-fi
-
 #setup some dirs
 #echo "setup patrol and cyclops dirs"
 #sudo mkdir -p /var/nfs/cyclops
