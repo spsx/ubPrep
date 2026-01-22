@@ -10,9 +10,12 @@ echo "get the first stuffs"
 sudo nala install curl git perl ssh net-tools -y
 
 echo "add some repos"
+#webmin repo
 sudo curl -o setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/setup-repos.sh
 sudo sh setup-repos.sh
+#fastfetch repo
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+#nodejs repo
 if [ ! -f "/etc/apt/keyrings/nodesource.gpg" ]; then
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 fi
@@ -22,19 +25,27 @@ echo "get the other stuff"
 sudo nala install gcc make bzip2 btop g++ python3-pip python3-opencv python3-websockets python3-paho-mqtt cmake nodejs webmin mosquitto -y
 
 echo "looking for mybash"
-if [ ! -d "/home/synergy/build" ]; then
-    echo "making build"
-    mkdir -p ~/build
-    cd ~/build
-    git clone https://github.com/christitustech/mybash
+# if [ ! -d "/home/synergy/build" ]; then
+#     echo "making build"
+#     mkdir -p ~/build
+#     cd ~/build
+#     git clone https://github.com/christitustech/mybash
+#     cd mybash
+#     ./setup.sh
+# fi
+if [ ! -d "/home/synergy/mybash" ]; then
+    echo "making dir"
+    mkdir -p ~/mybash
+    cd ~/mybash
+    git clone --depth=1 https://github.com/dacrab/mybash.git
     cd mybash
     ./setup.sh
 fi
 
 #setup some dirs
-echo "setup patrol and cyclops dirs"
-sudo mkdir -p /var/nfs/cyclops
-sudo mkdir -m 777 -p /home/synergy/Documents/{PatrolPics,PatrolVids,Panos}
+#echo "setup patrol and cyclops dirs"
+#sudo mkdir -p /var/nfs/cyclops
+#sudo mkdir -m 777 -p /home/synergy/Documents/{PatrolPics,PatrolVids,Panos}
 
 #npm pm2
 echo "it's pm2 time"
