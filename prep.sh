@@ -25,6 +25,8 @@ echo "get the other stuff"
 sudo nala install gcc make bzip2 btop g++ python3-pip python3-opencv python3-websockets python3-paho-mqtt cmake nodejs webmin mosquitto trash-cli -y
 
 #setup some dirs
+sudo mkdir -p /opt/synergy
+sudo chown synergy:synergy /opt/synergy
 #echo "setup patrol and cyclops dirs"
 #sudo mkdir -p /var/nfs/cyclops
 #sudo mkdir -m 777 -p /home/synergy/Documents/{PatrolPics,PatrolVids,Panos}
